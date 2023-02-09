@@ -17,7 +17,6 @@ struct PointMass {
 }
 
 impl PointMass {
-    /// Point mass constructor
     fn new(mass: f64, pos: DVec2) -> Self {
         Self { mass, pos }
     }
