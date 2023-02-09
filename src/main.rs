@@ -4,7 +4,7 @@ use glam::DVec2;
 use plotlib::{page::Page, repr::Plot, style::LineStyle, view::ContinuousView};
 
 const NEWTON_G: f64 = 1.;
-/// Const array of matplotlib colors
+/// Const array of matplotlib colours
 const TAB10: [&str; 10] = [
     "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f",
     "#bcbd22", "#17becf",
@@ -113,18 +113,18 @@ fn add_lines(mut view: ContinuousView, field_lines: &[Vec<DVec2>], colour: &str)
     view
 }
 
-/// Create a plot the sets of field lines `field_lines` (one set for each mass) with given colorscheme,
+/// Create a plot the sets of field lines `field_lines` (one set for each mass) with given colourscheme,
 /// x/y limits, figure width and savename
 fn plot<P: AsRef<Path>>(
     all_field_lines: &[Vec<Vec<DVec2>>],
-    colors: &[&str],
+    colours: &[&str],
     x_range: (f64, f64),
     y_range: (f64, f64),
     width: f64,
     savename: P,
 ) {
     let mut view = ContinuousView::new();
-    for (field_lines, colour) in all_field_lines.iter().zip(colors.iter().cycle()) {
+    for (field_lines, colour) in all_field_lines.iter().zip(colours.iter().cycle()) {
         view = add_lines(view, field_lines, colour);
     }
 
